@@ -1,4 +1,3 @@
-console.log('client side javascript file is loaded')
 
 fetch('http://localhost:3000/weather?address='+location).then((response)=>{
     response.json().then((data) =>{
@@ -32,7 +31,6 @@ weatherForm.addEventListener('submit',(e)=> {
             } else{
                 messageOne.textContent=data.location
                 messageTwo.textContent=data.forecast
-
             }
         })
     })
