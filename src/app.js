@@ -9,6 +9,8 @@ const { request } = require('http')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 //defining paths
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -68,12 +70,6 @@ app.get('/weather', (req, res) => {
         })
     })
 
-    // res.send({
-    //     forecast: 'It is snowing',
-    //     location: 'Dubai',
-    //     address: req.query.address
-    // })
-
 
 })
 
@@ -95,6 +91,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=> {
-    console.log('server is running on port 3000')
+app.listen(port,()=> {
+    console.log('server is running on port'+ port)
 })
